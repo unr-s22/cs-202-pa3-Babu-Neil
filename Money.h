@@ -2,15 +2,13 @@
 #define CODE_MONEY_H
 
 #include <iostream>
-
+#include <iomanip>
 
 class Money{
-    private:
         int dollars;
         int cents;
     public:
-        Money(int,int);
-        Money();
+        Money(int d = 0,int c =0);
 
         friend bool operator<(Money const &money, Money const &money1);
         friend bool operator>(Money const &money, Money const &money1);
