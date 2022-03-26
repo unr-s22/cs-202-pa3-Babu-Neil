@@ -69,16 +69,20 @@ bool operator!=(Money const &money, Money const &money1){
 
 Money operator+(Money const &money, Money const &money1){
     Money moneyans;
-    moneyans.dollars =  money.dollars + money1.dollars;
-    moneyans.cents = money.cents + money1.cents;
+    moneyans.dollars = money.dollars + money1.dollars + (money.cents + money1.cents)/100;
+    moneyans.cents = (money.cents + money1.cents)%100;
 
     return moneyans;
 }
 
 Money operator-(Money const &money, Money const &money1){
     Money moneyans;
-    moneyans.dollars =  money.dollars - money1.dollars;
-    moneyans.cents = money.cents - money1.cents;
+    int total1, total2;
+    total1 = money.dollars*100 + money.cents;
+    total2 = money1.dollars*100 + money1.cents;
+    total1 = total1 - total2;
+    moneyans.dollars = total1/100;
+    moneyans.cents = abs(total1%100);
 
     return moneyans;
 }
