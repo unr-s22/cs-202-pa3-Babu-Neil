@@ -97,3 +97,5 @@ std::ostream &operator << (std::ostream& out, const Money& money){
     out << "$" << money.dollars << "."<< std::setw(2) <<std::setfill('0') << money.cents;
     return out;
 }
+
+Money::~Money(){}

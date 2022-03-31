@@ -5,10 +5,15 @@
 #include <iomanip>
 
 class Money{
+    public:
         int dollars;
         int cents;
-    public:
-        Money(int d = 0,int c =0);
+        Money(int d,int c);
+
+        Money(){
+            dollars = 0;
+            cents = 0;
+        }
 
         friend bool operator<(Money const &money, Money const &money1);
         friend bool operator>(Money const &money, Money const &money1);
@@ -19,6 +24,8 @@ class Money{
         friend Money operator+(Money const &money, Money const &money1);
         friend Money operator-(Money const &money, Money const &money1);
         friend std::ostream &operator <<(std::ostream& out, Money const &money);
+
+        ~Money();
 };
 
 

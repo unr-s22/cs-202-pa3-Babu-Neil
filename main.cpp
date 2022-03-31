@@ -3,11 +3,27 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include "Account.h"
 
 int main(){
+    Money start(300,23);
+    Account a(start);
+    std::cout << a << std::endl;
+    
+    a.makeDeposit(Money(200,00));
+    a.makeDeposit(Money(300,24));
+    a.makeDeposit(Money(501,22));
 
-    Money m(99,0);
-    Money m1(100,49);
+    std::cout << a << std::endl;
+
+    a.makeWithdrawls(Money(300,10));
+    a.makeWithdrawls(Money(201,34));
+
+    std::cout << a << std::endl;
+
+
+    Money m(100,0);
+    Money m1(100,0);
 
     if (m > m1){
         std::cout << "True" <<std::endl;
