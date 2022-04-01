@@ -9,16 +9,16 @@
 class Account: public Money {
     protected:
         bool mutable flag = 0;
-        int mutable balance_dollars =0;
-        int mutable balance_cents = 0;
-        int mutable num = 0;
+        int mutable num_depos = 1;
+        int mutable num_with =0;
     public:
         Account(Money money);
 
         void makeDeposit(Money money);
         void makeWithdrawls(Money money);
 
-        std::vector<Money> balance;
+        mutable std::vector<Money> deposit;
+        std::vector<Money> withdraw;
 
         friend std::ostream &operator <<(std::ostream& out1, const Account  &account);
 

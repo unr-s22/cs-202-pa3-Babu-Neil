@@ -5,11 +5,11 @@
 #include <iomanip>
 
 class Money{
-    public:
+    protected:
         int dollars;
         int cents;
+    public:
         Money(int d,int c);
-
         Money(){
             dollars = 0;
             cents = 0;

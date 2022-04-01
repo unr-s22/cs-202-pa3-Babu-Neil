@@ -9,21 +9,23 @@ int main(){
     Money start(300,23);
     Account a(start);
     std::cout << a << std::endl;
-    
-    a.makeDeposit(Money(200,00));
-    a.makeDeposit(Money(300,24));
-    a.makeDeposit(Money(501,22));
+
+    Money d1(200,00); Money d2(300,24); Money d3(501,22);
+    a.makeDeposit(d1);
+    a.makeDeposit(d2);
+    a.makeDeposit(d3);
 
     std::cout << a << std::endl;
 
-    a.makeWithdrawls(Money(300,10));
-    a.makeWithdrawls(Money(201,34));
+    Money w1(300,10); Money w2(201,34);
+    a.makeWithdrawls(w1);
+    a.makeWithdrawls(w2);
 
     std::cout << a << std::endl;
 
 
-    Money m(100,0);
-    Money m1(100,0);
+    Money m(101,0);
+    Money m1(100,01);
 
     if (m > m1){
         std::cout << "True" <<std::endl;
